@@ -1,0 +1,208 @@
+import math
+#summon boss
+function stuff:bosstime:
+    summon marker ~ ~ ~ {Tags:["boss"]}
+    summon minecraft:block_display ~ ~ ~ {Tags:["boss_thing"],Passengers: [{block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.0f, 0.0f, 1.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.3125f, 0.35714296f, 0.31250003f], translation: [0.13318788f, 0.14508925f, -0.1562502f]}}, {block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.31249997f, 0.35714293f, 0.31249997f], translation: [-0.17931214f, -0.16741079f, -0.15625021f]}}, {block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, id: "minecraft:block_display", transformation: {left_rotation: [-0.70710677f, 0.0f, 0.0f, 0.70710677f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.31250033f, 0.35714296f, 0.3125001f], translation: [-0.17931217f, -0.16741084f, 0.15773939f]}}, {block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.7071068f, 0.0f, 0.0f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.31250012f, 0.35714266f, 0.31249973f], translation: [-0.17900656f, 0.14507675f, -0.15781961f]}}, {block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.0f, 0.0f, 0.7071068f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.3125001f, 0.3571429f, 0.31250036f], translation: [0.13465148f, -0.16741079f, -0.15625021f]}}, {block_state: {Name: "minecraft:crying_obsidian"}, id: "minecraft:block_display", transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.3571428f, 0.35714293f, 0.3571428f], translation: [-0.20163356f, -0.18973221f, -0.17857163f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "true", north: "false", south: "false", waterlogged: "false", west: "true"}}, id: "minecraft:block_display", transformation: {left_rotation: [-0.012340722f, 0.012340722f, 0.70699906f, -0.70699906f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.8124999f, 0.5625001f, 0.8125001f], translation: [-0.29016897f, 0.39381218f, 0.40205285f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "false", north: "true", south: "true", waterlogged: "false", west: "false"}}, id: "minecraft:block_display", transformation: {left_rotation: [-0.012340881f, 0.012340866f, 0.70699906f, -0.70699906f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.8124999f, 0.5625005f, 0.8125006f], translation: [-0.26181307f, 1.206312f, -0.4099521f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "false", north: "true", south: "true", waterlogged: "false", west: "false"}}, id: "minecraft:block_display", transformation: {left_rotation: [-0.012340881f, 0.012340866f, 0.70699906f, -0.70699906f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.8124999f, 0.5625005f, 0.8125006f], translation: [-0.2618131f, -0.41868755f, -0.40995198f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "true", north: "false", south: "false", waterlogged: "false", west: "true"}}, id: "minecraft:block_display", transformation: {left_rotation: [-0.012340881f, 0.012340866f, 0.70699906f, -0.70699906f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.8124999f, 0.5625005f, 0.8125006f], translation: [-0.23345706f, 0.39381212f, -1.221957f]}}, {Passengers: [{block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "false", north: "true", south: "true", waterlogged: "false", west: "false"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.2876073f, 0.26488775f, -0.64597374f, 0.6556177f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.81249785f, 0.5625004f, 0.81250197f], translation: [-0.29673854f, 1.1264086f, 0.5901785f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "false", north: "true", south: "true", waterlogged: "false", west: "false"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.2876073f, 0.26488775f, -0.64597374f, 0.6556177f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.81249785f, 0.5625004f, 0.81250197f], translation: [-0.2559434f, -0.0024110079f, -0.5780362f]}}, {block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "true", north: "false", south: "false", waterlogged: "false", west: "true"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.2876073f, 0.26488775f, -0.64597374f, 0.6556177f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.81249785f, 0.5625004f, 0.81250197f], translation: [-0.25664327f, 1.1464622f, -0.55799484f]}}], block_state: {Name: "minecraft:purple_stained_glass_pane", Properties: {east: "true", north: "false", south: "false", waterlogged: "false", west: "true"}}, id: "minecraft:block_display", transformation: {left_rotation: [0.2876073f, 0.26488775f, -0.64597374f, 0.6556177f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.81249785f, 0.5625004f, 0.81250197f], translation: [-0.29603866f, -0.022464514f, 0.570137f]}}], block_state: {Name: "minecraft:respawn_anchor", Properties: {charges: "4"}}, transformation: {left_rotation: [0.0f, 0.0f, -0.7071068f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.2901785f, 0.35714272f, 0.31250045f], translation: [-0.17857137f, 0.14508927f, -0.15625021f]}}
+    summon shulker ~0.1 ~-0.5 ~-0.1 {NoGravity: 1b, Silent: 1b, NoAI: 1b, Health: 100, Tags: ["boss_hitbox"], Passengers: [{id: "minecraft:marker", Tags: ["boss_hitbox_marker"]}], active_effects: [{id: "minecraft:invisibility", amplifier: 1, duration: -1, show_particles: 0b, show_icon: 0b, ambient: 0b}], attributes: [{id: "minecraft:scale", base: 2.5d}, {id: "max_health", base: 1000}]}
+    schedule function stuff:attack 60
+    scoreboard players set #boss level 1
+    scoreboard players set #boss spawning 1
+    scoreboard players set #boss phase 1
+# summoning crystals      
+function stuff:summon_crystal:
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~ ~ ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_1
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit2","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~1 ~ ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox2"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_2
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit3","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~ ~1 ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox3"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_3
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit4","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~ ~ ~1 {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox4"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_4
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit5","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~ ~ ~2 {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox5"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_5
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit6","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~ ~2 ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox6"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_6
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit7","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~2 ~ ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox7"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_7
+    summon minecraft:block_display ~ ~ ~ {interpolation_duration:2,Tags:["orbit8","boss_crystals"],block_state: {Name: "minecraft:amethyst_cluster", Properties: {facing: "up", waterlogged: "false"}}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [-0.5f, -0.5f, -0.5f]}}
+    summon allay ~1 ~1 ~ {Health:60,NoAI:1b,NoGravity:1b,Silent:1b,active_effects:[{id:invisibility,duration:-1,show_particles:0b}],attributes:[{id:scale,base:2f},{id:max_health,base:60f}],Passengers:[{id:"marker",Tags:["crystal_hitbox","hitbox8"]}]}
+    tag @e[type=allay,tag=!hitbox_1,tag=!hitbox_2,tag=!hitbox_3,tag=!hitbox_4,tag=!hitbox_5,tag=!hitbox_6,tag=!hitbox_7,tag=!hitbox_8,distance=..2,limit=1] add hitbox_8
+    tag @e[type=allay,distance=..2,limit=8] add crystal_hitbox
+    scoreboard players set #boss crystal_num 8
+#movement for crystals
+function stuff:orbit:
+    scoreboard players add @s orbit 1
+    for i in range(int(500)):
+        execute if score @s orbit matches i:
+            angle = 2 * math.pi /500 * i
+            radius = 10
+            x = radius * math.cos(angle)
+            z = radius * math.sin(angle)
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_1] ~x ~-0.5 ~z
+            x = radius * math.cos(angle) * -1
+            z = radius * math.sin(angle) * -1
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit2,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_2] ~x ~-0.5 ~z
+            x = radius * math.cos(angle + math.pi/2)
+            z = radius * math.sin(angle + math.pi/2)
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit3,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_3] ~x ~-0.5 ~z
+            x = radius * math.cos(angle + math.pi/2) * -1
+            z = radius * math.sin(angle + math.pi/2) * -1
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit4,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_4] ~x ~-0.5 ~z
+            angle = angle + math.pi/4
+            x = radius * math.cos(angle)
+            z = radius * math.sin(angle)
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit5,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_5] ~x ~-0.5 ~z
+            x = radius * math.cos(angle) * -1
+            z = radius * math.sin(angle) * -1
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit6,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_6] ~x ~-0.5 ~z
+            x = radius * math.cos(angle + math.pi/2)
+            z = radius * math.sin(angle + math.pi/2)
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit7,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_7] ~x ~-0.5 ~z
+            x = radius * math.cos(angle + math.pi/2) * -1
+            z = radius * math.sin(angle + math.pi/2) * -1
+            execute as @e[type=marker,tag=boss,limit=1] at @s run data merge entity @e[distance=..15,tag=orbit8,type=block_display,limit=1] {transformation:{translation:[x,0f,z]}}
+            x += 0.5
+            z += 0.5
+            execute as @e[type=marker,tag=boss,limit=1] at @s run tp @e[type=allay,tag=hitbox_8] ~x ~-0.5 ~z
+            tp @e[type=block_display,distance=..2,tag=boss_crystals] @e[type=marker,tag=boss,limit=1]
+    if score @s orbit matches 500:
+        scoreboard players set @s orbit 0
+#contact damage
+function stuff:contact_dammage:
+    execute as @a[distance=..1] run damage @s 5
+# on crystal hitbox death
+function stuff:marker_death:
+
+    say crystal death
+    kill @s
+    scoreboard players remove #boss crystal_num 1
+    execute if score #boss crystal_num matches ..0 run scoreboard players set #boss phase 2
+    execute if score #boss crystal_num matches ..2 run scoreboard players set #boss level 3
+    execute if score #boss crystal_num matches 3..5 run scoreboard players set #boss level 2
+    execute if score #boss crystal_num matches 6..8 run scoreboard players set #boss level 1
+    execute as @s[tag=hitbox] run kill @e[type=block_display,sort=nearest,tag=orbit,limit=1]
+    execute as @s[tag=hitbox8] run kill @e[type=block_display,sort=nearest,tag=orbit8,limit=1]
+    execute as @s[tag=hitbox2] run kill @e[type=block_display,sort=nearest,tag=orbit2,limit=1]
+    execute as @s[tag=hitbox3] run kill @e[type=block_display,sort=nearest,tag=orbit3,limit=1]
+    execute as @s[tag=hitbox4] run kill @e[type=block_display,sort=nearest,tag=orbit4,limit=1]
+    execute as @s[tag=hitbox5] run kill @e[type=block_display,sort=nearest,tag=orbit5,limit=1]
+    execute as @s[tag=hitbox6] run kill @e[type=block_display,sort=nearest,tag=orbit6,limit=1]
+    execute as @s[tag=hitbox7] run kill @e[type=block_display,sort=nearest,tag=orbit7,limit=1]
+#on boss death
+function stuff:boss_death:
+    tellraw @a {"text":"The boss was slain","color":"#9147E8"}
+    execute at @e[type=marker,tag=boss,limit=1] run loot spawn ~ ~ ~ loot stuff:shard_thing
+    execute at @e[type=marker,tag=boss,limit=1] run loot spawn ~ ~ ~ loot stuff:boss
+    kill @s
+    kill @e[type=marker,tag=boss]
+    execute as @e[type=block_display,tag=boss_thing] at @s run kill @e[type=block_display,distance= ..3,predicate=stuff:has_vehicle]
+    kill @e[type=block_display,tag=boss_thing]
+    scoreboard players set #boss phase 0
+function stuff:attack:
+    execute if score #boss phase matches 1:
+        execute if score #boss level matches 1:
+            schedule function stuff:attack 15
+        execute if score #boss level matches 2:
+            schedule function stuff:attack 8
+        execute if score #boss level matches 3:
+            schedule function stuff:attack 2
+    execute store result score #ranged random run random value 1..8
+    execute as @e[distance= ..30,tag= hitbox_1] at @s if score #ranged random matches 1:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_2] at @s if score #ranged random matches 2:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_3] at @s if score #ranged random matches 3:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_4] at @s if score #ranged random matches 4:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_5] at @s if score #ranged random matches 5:
+            function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_6] at @s if score #ranged random matches 6:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_7] at @s if score #ranged random matches 7:
+        function stuff:ranged
+        tag @s add shooter
+    execute as @e[distance= ..30,tag= hitbox_8] at @s if score #ranged random matches 8:
+        function stuff:ranged
+        tag @s add shooter
+#boss ranged attack
+function stuff:ranged:
+    execute as @e[tag=shooter,type=allay] at @s run summon armor_stand ~ ~ ~ {Small:1b,Marker:1b,Invisible:1b,Tags:["projectile"]}
+    execute as @e[type=armor_stand,tag=projectile,sort=nearest,limit=1] run rotate @s facing entity @a[limit=1,sort=nearest]
+    scoreboard players set #ranged tick 0
+    tag @e remove shooter
+# moving projectile
+function stuff:ranged_move:
+    execute as @e[type=armor_stand,tag=projectile,sort=nearest] at @s run tp @s ^ ^ ^0.2
+#ticking functions for projectile
+function stuff:ranged_tick:
+    execute as @e[type=armor_stand,tag=projectile,sort=nearest] at @s run function stuff:ranged_move
+    scoreboard players add #ranged tick 1
+    execute as @e[type= armor_stand,tag=projectile] at @s if score #ranged tick matches 301.. run kill @s
+    execute as @e[type=armor_stand,tag=projectile] at @s unless block ~ ~ ~ air run kill @s
+    execute as @e[type= armor_stand,tag= projectile] at @s run damage @a[distance=..1,sort=nearest,limit=1] 5 magic
+    execute as @e[type=armor_stand,tag=projectile] at @s run particle dust{scale:1.0f,color:[0.65f, 0.4, 0.8]} ~ ~ ~ 0.1 0.1 0.1 0 10
+function stuff:phase:
+    execute if score #boss phase matches 1:
+        execute if score #boss spawning matches 1:
+            execute at @e[type=marker,tag=boss] run function stuff:summon_crystal
+            scoreboard players set #boss spawning 0
+        execute as @e[type=marker,tag=boss,limit=1] run function stuff:orbit
+        effect give @e[type=shulker,tag=boss_hitbox] resistance 1 5
+#
+#shard stuff
+#
+# function stuff:shard_tick:
+
+
+function stuff:shard_activate:
+    execute if score @s shard_ablity matches 1:
+        effect give @s speed 1 5
+    execute if score @s shard_ablity matches 2:
+        effect give @s strength 1 3
+    execute if score @s shard_ablity matches 3:
+        effect give @s regeneration 1 1
+    execute if score @s shard_ablity matches 4:
+        effect give @s slow_falling 1 1
+        effect give @s jump_boost 1 2
+    execute if score @s shard_ablity matches 0:
+        effect give @s resistance 1 3
+
+function stuff:shard_ability:
+    execute if score @s shard_ablity matches ..4 run scoreboard players add @s shard_ablity 1
+    execute unless score @s shard_ablity matches ..4 run scoreboard players set @s shard_ablity 0
+    execute as @a[scores={rightclick_carrot=1..}] if entity @s[nbt={SelectedItem:{components:{"minecraft:item_model": "minecraft:amethyst_shard"}}}] run playsound block.amethyst_block.fall

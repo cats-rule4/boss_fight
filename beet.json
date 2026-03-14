@@ -1,0 +1,10 @@
+{
+    "name": "boss_fight",
+    "description": "stuff",
+    "data_pack": {"load":["scr"]},
+    "output": "build",
+    "pipeline": ["mecha"],
+    "require": ["bolt","bolt_expressions"],
+    "meta": {"bolt":{"entrypoint":["stuff:boss"]}}
+    
+}
